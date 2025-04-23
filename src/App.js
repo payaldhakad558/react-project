@@ -6,22 +6,23 @@ function App() {
   //state
 const [data,setData]=useState([]);
   //function
-  fetch('https://fakestoreapi.com/products')
+  fetch('https://fakestoreapi.com/products?limit=18')
   .then((res)=>{
     return res.json();
   }).then((d)=>{
-    console.log(d);
-    setData(d);
-    console.log(d);
+    //console.log(d);
+    setData(d)
   }).catch((e)=>{
     console.log(e);
   })
   //return statement
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div className="container-fluid">
-          <a className="navbar-brand fw-bold" >Cubedots</a>
+          <a className="navbar-brand fw-bold" href="#">Cubedots</a>
+          
           <button
             className="navbar-toggler"
             type="button"
@@ -70,55 +71,34 @@ const [data,setData]=useState([]);
           </div>
         </div>
       </nav>
-      <div className=" container mt-5">
-      <button type="button" className="btn-p-heading mx-5">India Country</button>
-      <button type="button" className="btn-p-heading ">Dubai Country</button>
-      <button type="button" className="btn-p-heading mx-5">America  Country</button>
-      <button type="button" className="btn-p-heading  ">Austrelia Country</button>
       
-      
-      
-      </div>
-      
-      <div className="container text-center">
-      <div className="row row-cols-4 mt-5">
-        
-        {
-          data.map((item)=>{
-            return(
-              <>
-              <div className="col  ">
-              <div className="card" style={{width: "18rem"}}>
-              <img src={item.image} classNameName="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Price:${item.price}</h5>
-                <p className="card-text">{item.category}</p>
-                <button type="button" className="btn btn-outline-dark btn-sm ">Go Buy Now</button>
-              </div>
-            </div>
-              </div>
-                
-                </>
-            )
-          })
-        }
-      
-      </div>
-</div>
+      <div className="about-container">
+     
 
-<div>
+     <div className="about-featured">
+       
+       <div className="featured-grid">
+         {data.map(item => (
+           <div key={item.id} className="featured-card">
+             <img src={item.image} alt={item.title} />
+             <h3>{item.title}</h3>
+             <p className="featured-price">${item.price}</p>
+           </div>
+         ))}
+       </div>
+     </div>
 
-</div>
+     
+   </div>
 
-
-<footer className="footer">
-  <div className="footer-container">
-    <div className="footer-section about">
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section about">
       <h2>About Us</h2>
       <p>We provide innovative solutions to help your business thrive. Follow us on our journey.</p>
     </div>
 
-    <div className="footer-section links">
+    <div class="footer-section links">
       <h2>Quick Links</h2>
       <ul>
         <li><a href="#">Home</a></li>
@@ -128,9 +108,9 @@ const [data,setData]=useState([]);
       </ul>
     </div>
 
-    <div className="footer-section social">
+    <div class="footer-section social">
       <h2>Follow Us</h2>
-      <div className="social-icons">
+      <div class="social-icons">
         <button href="#"><img src="https://img.icons8.com/ios-filled/24/facebook.png" alt="Facebook" /></button>
         <button href="#"><img src="https://img.icons8.com/ios-filled/24/twitter.png" alt="Twitter" /></button>
         <button href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram" /></button>
