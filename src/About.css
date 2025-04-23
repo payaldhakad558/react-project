@@ -1,0 +1,79 @@
+.about-container {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  .about-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .about-header h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #000;
+  }
+  
+  .about-header p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  .about-featured h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .featured-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: 0.3s ease;
+  }
+  
+  .featured-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .featured-card img {
+    max-height: 140px;
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
+  
+  .featured-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .featured-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .about-footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+  }
+  
